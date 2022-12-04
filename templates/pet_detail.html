@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Pet detail</title>
+</head>
+<body>
+    <div class="col-md-8">
+       {% if pet.photo_url %}
+       <img class="img-fluid" src="{{ pet.photo_url }}">
+       {% endif %}
+       <ul>
+          <li>Name: {{pet.name}}</li>
+          <li>Species: {{pet.species}}</li>
+          {% if pet.age %}
+          <li>Age: {{pet.age}}</li>
+          {% endif %}
+       </ul>
+       <a href="/pet/{{pet.id}}/edit" class="btn btn-danger btn-lg">Edit</a>
+
+    </div>
+    
+
+
+    
+</body>
+</html>
